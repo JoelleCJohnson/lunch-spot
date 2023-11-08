@@ -1,8 +1,11 @@
 import { Box, Image, Heading, Text, Pressable } from "@gluestack-ui/themed"
 import { Link } from "expo-router"
+import { useContext } from "react"
+import { RestaurantContext } from "../app/_layout"
 
 
 export default function RestaurantCard({ restaurant }) {
+    const setThisRest = useContext(RestaurantContext)
     return (
         <Link href="/details" asChild>
             <Pressable>
