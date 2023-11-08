@@ -1,10 +1,10 @@
 import { GluestackUIProvider } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
-import { View, Stack } from "expo-router";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
     return (
-        <GluestackUIProvider>
+        <GluestackUIProvider config={config}>
             <Stack screenOptions={{ header: () => null }} />
         </GluestackUIProvider>
     )

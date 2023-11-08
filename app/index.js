@@ -1,7 +1,5 @@
-import { Text, View } from "react-native";
-import { Link } from "expo-router";
+import { View } from "react-native";
 import RestaurantList from "../components/RestaurantList";
-
 
 export default function Home() {
     return (
