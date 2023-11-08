@@ -1,14 +1,20 @@
 import { Box, Image, Heading, Text, Pressable } from "@gluestack-ui/themed"
-import { Link } from "expo-router"
+import { router } from "expo-router"
 import { useContext } from "react"
 import { RestaurantContext } from "../app/_layout"
 
 
 export default function RestaurantCard({ restaurant }) {
-    const setThisRest = useContext(RestaurantContext)
+
+    const { setThisRest } = useContext(RestaurantContext)
+
+    const showDetails = () => {
+        setThisRest(restaurant)
+        router.push("/details")
+    }
+
     return (
-        <Link href="/details" asChild>
-            <Pressable>
+            <Pressable onPress={showDetails}>
                 <Box
                     backgroundColor='$backgroundLight50' p={12} mb={16} rounded="$xl">
                     <Image alt={restaurant.name} source={{ uri: restaurant.photo_url }} w="full" h={160} rounded="$lg" />
@@ -16,6 +22,5 @@ export default function RestaurantCard({ restaurant }) {
                     <Text>{restaurant.address}</Text>
                 </Box>
             </Pressable>
-        </Link>
     )
 }
