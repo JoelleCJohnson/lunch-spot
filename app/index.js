@@ -1,11 +1,12 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import { Link } from "expo-router";
+import RestaurantList from "../components/RestaurantList";
+
 
 export default function Home() {
     return (
-        <>
-            <Text style={{ fontSize: 48 }}>Home</Text>
-            <Link href={"/settings"}>Settings</Link>
-        </>
+        <View style={{ backgroundColor: 'skyblue', flex: 1, paddingVertical: 60, paddingHorizontal: 30,}}>
+            <RestaurantList />
+        </View>
     )
 }
